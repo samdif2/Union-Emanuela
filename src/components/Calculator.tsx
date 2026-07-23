@@ -37,33 +37,33 @@ export const Calculator: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#FF6600] rounded-3xl p-5 sm:p-6 text-white shadow-xl border-2 border-orange-400 relative overflow-hidden my-6">
+    <div className="bg-[#FF6600] rounded-3xl p-4 sm:p-5 text-white shadow-xl border-2 border-orange-400 relative overflow-hidden my-5">
       {/* Decorative accent background circles */}
       <div className="absolute -top-12 -right-12 w-32 h-32 bg-white/10 rounded-full blur-xl pointer-events-none" />
       <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-black/10 rounded-full blur-xl pointer-events-none" />
 
       {/* Header */}
-      <div className="relative z-10 mb-6 text-center">
-        <span className="inline-block bg-white/20 backdrop-blur-xs text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2">
+      <div className="relative z-10 mb-4 text-center">
+        <span className="inline-block bg-white/20 backdrop-blur-xs text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider mb-1">
           Calcolatore Risparmio
         </span>
-        <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
+        <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight">
           Calcola il tuo risparmio
         </h2>
-        <p className="text-orange-100 text-xs sm:text-sm mt-1">
-          Regola i parametri per scoprire quanto puoi azzerare sulla bolletta mensile.
+        <p className="text-orange-100 text-xs mt-0.5">
+          Regola i parametri per scoprire quanto puoi azzerare.
         </p>
       </div>
 
-      {/* Sliders Container */}
-      <div className="relative z-10 space-y-4 mb-6">
-        {/* Slider 1: Bolletta Attuale */}
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-3.5 border border-white/20">
-          <div className="flex justify-between items-center mb-1.5">
-            <label htmlFor="bollettaAttuale" className="text-sm font-semibold text-white">
+      {/* Sliders Compact List */}
+      <div className="relative z-10 space-y-3 mb-4 bg-black/10 backdrop-blur-xs rounded-2xl p-3 border border-white/15">
+        {/* Item 1: Bolletta Attuale */}
+        <div>
+          <div className="flex justify-between items-center mb-1">
+            <label htmlFor="bollettaAttuale" className="text-xs font-bold text-white">
               Bolletta attuale
             </label>
-            <span className="text-base font-bold bg-white text-[#FF6600] px-2.5 py-0.5 rounded-lg shadow-xs">
+            <span className="text-xs font-black bg-white text-[#FF6600] px-2 py-0.5 rounded-md shadow-xs">
               {formatCurrency(values.bollettaAttuale)}
             </span>
           </div>
@@ -75,21 +75,17 @@ export const Calculator: React.FC = () => {
             step={5}
             value={values.bollettaAttuale}
             onChange={(e) => setValues({ ...values, bollettaAttuale: Number(e.target.value) })}
-            className="w-full accent-slate-900 cursor-pointer h-2 bg-orange-300/50 rounded-lg appearance-none"
+            className="w-full accent-slate-900 cursor-pointer h-1.5 bg-orange-200/50 rounded-lg appearance-none"
           />
-          <div className="flex justify-between text-[11px] text-orange-100 font-medium mt-1">
-            <span>50 €</span>
-            <span>300 €</span>
-          </div>
         </div>
 
-        {/* Slider 2: Spesa Supermercato */}
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-3.5 border border-white/20">
-          <div className="flex justify-between items-center mb-1.5">
-            <label htmlFor="spesaSupermercato" className="text-sm font-semibold text-white">
+        {/* Item 2: Spesa Supermercato */}
+        <div>
+          <div className="flex justify-between items-center mb-1">
+            <label htmlFor="spesaSupermercato" className="text-xs font-bold text-white">
               Spesa Supermercato
             </label>
-            <span className="text-base font-bold bg-white text-[#FF6600] px-2.5 py-0.5 rounded-lg shadow-xs">
+            <span className="text-xs font-black bg-white text-[#FF6600] px-2 py-0.5 rounded-md shadow-xs">
               {formatCurrency(values.spesaSupermercato)}
             </span>
           </div>
@@ -101,21 +97,17 @@ export const Calculator: React.FC = () => {
             step={10}
             value={values.spesaSupermercato}
             onChange={(e) => setValues({ ...values, spesaSupermercato: Number(e.target.value) })}
-            className="w-full accent-slate-900 cursor-pointer h-2 bg-orange-300/50 rounded-lg appearance-none"
+            className="w-full accent-slate-900 cursor-pointer h-1.5 bg-orange-200/50 rounded-lg appearance-none"
           />
-          <div className="flex justify-between text-[11px] text-orange-100 font-medium mt-1">
-            <span>200 €</span>
-            <span>800 €</span>
-          </div>
         </div>
 
-        {/* Slider 3: Spesa Carburante */}
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-3.5 border border-white/20">
-          <div className="flex justify-between items-center mb-1.5">
-            <label htmlFor="spesaCarburante" className="text-sm font-semibold text-white">
+        {/* Item 3: Spesa Carburante */}
+        <div>
+          <div className="flex justify-between items-center mb-1">
+            <label htmlFor="spesaCarburante" className="text-xs font-bold text-white">
               Spesa Carburante
             </label>
-            <span className="text-base font-bold bg-white text-[#FF6600] px-2.5 py-0.5 rounded-lg shadow-xs">
+            <span className="text-xs font-black bg-white text-[#FF6600] px-2 py-0.5 rounded-md shadow-xs">
               {formatCurrency(values.spesaCarburante)}
             </span>
           </div>
@@ -127,21 +119,17 @@ export const Calculator: React.FC = () => {
             step={10}
             value={values.spesaCarburante}
             onChange={(e) => setValues({ ...values, spesaCarburante: Number(e.target.value) })}
-            className="w-full accent-slate-900 cursor-pointer h-2 bg-orange-300/50 rounded-lg appearance-none"
+            className="w-full accent-slate-900 cursor-pointer h-1.5 bg-orange-200/50 rounded-lg appearance-none"
           />
-          <div className="flex justify-between text-[11px] text-orange-100 font-medium mt-1">
-            <span>100 €</span>
-            <span>500 €</span>
-          </div>
         </div>
 
-        {/* Slider 4: Spese Varie */}
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-3.5 border border-white/20">
-          <div className="flex justify-between items-center mb-1.5">
-            <label htmlFor="speseVarie" className="text-sm font-semibold text-white">
+        {/* Item 4: Spese Varie */}
+        <div>
+          <div className="flex justify-between items-center mb-1">
+            <label htmlFor="speseVarie" className="text-xs font-bold text-white">
               Spese Varie
             </label>
-            <span className="text-base font-bold bg-white text-[#FF6600] px-2.5 py-0.5 rounded-lg shadow-xs">
+            <span className="text-xs font-black bg-white text-[#FF6600] px-2 py-0.5 rounded-md shadow-xs">
               {formatCurrency(values.speseVarie)}
             </span>
           </div>
@@ -153,21 +141,17 @@ export const Calculator: React.FC = () => {
             step={10}
             value={values.speseVarie}
             onChange={(e) => setValues({ ...values, speseVarie: Number(e.target.value) })}
-            className="w-full accent-slate-900 cursor-pointer h-2 bg-orange-300/50 rounded-lg appearance-none"
+            className="w-full accent-slate-900 cursor-pointer h-1.5 bg-orange-200/50 rounded-lg appearance-none"
           />
-          <div className="flex justify-between text-[11px] text-orange-100 font-medium mt-1">
-            <span>50 €</span>
-            <span>800 €</span>
-          </div>
         </div>
 
-        {/* Slider 5: Amici invitati nella Community */}
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-3.5 border border-white/20">
-          <div className="flex justify-between items-center mb-1.5">
-            <label htmlFor="amiciInvitati" className="text-sm font-semibold text-white">
+        {/* Item 5: Amici invitati nella Community */}
+        <div>
+          <div className="flex justify-between items-center mb-1">
+            <label htmlFor="amiciInvitati" className="text-xs font-bold text-white">
               Amici invitati nella Community
             </label>
-            <span className="text-base font-bold bg-white text-[#FF6600] px-2.5 py-0.5 rounded-lg shadow-xs">
+            <span className="text-xs font-black bg-white text-[#FF6600] px-2 py-0.5 rounded-md shadow-xs">
               {values.amiciInvitati} {values.amiciInvitati === 1 ? 'amico' : 'amici'}
             </span>
           </div>
@@ -179,43 +163,39 @@ export const Calculator: React.FC = () => {
             step={1}
             value={values.amiciInvitati}
             onChange={(e) => setValues({ ...values, amiciInvitati: Number(e.target.value) })}
-            className="w-full accent-slate-900 cursor-pointer h-2 bg-orange-300/50 rounded-lg appearance-none"
+            className="w-full accent-slate-900 cursor-pointer h-1.5 bg-orange-200/50 rounded-lg appearance-none"
           />
-          <div className="flex justify-between text-[11px] text-orange-100 font-medium mt-1">
-            <span>0</span>
-            <span>50</span>
-          </div>
         </div>
       </div>
 
       {/* Results Box (Blu Scuro interno al riquadro arancio: #0A192F / #0D1B2A) */}
-      <div className="relative z-10 bg-[#0A192F] rounded-2xl p-4 sm:p-5 border border-sky-900/60 shadow-2xl text-white">
-        <div className="grid grid-cols-2 gap-3 pb-3 border-b border-slate-700/60">
+      <div className="relative z-10 bg-[#0A192F] rounded-2xl p-3.5 border border-sky-900/60 shadow-2xl text-white">
+        <div className="grid grid-cols-2 gap-2 pb-2.5 border-b border-slate-700/60">
           {/* Left: Risparmio Totale */}
           <div className="flex flex-col">
-            <span className="text-xs text-sky-300 font-medium uppercase tracking-wider">
+            <span className="text-[10px] text-sky-300 font-bold uppercase tracking-wider">
               Risparmio Totale
             </span>
-            <span className="text-xl sm:text-2xl font-black text-emerald-400 mt-1">
+            <span className="text-lg font-black text-emerald-400 mt-0.5">
               {formatCurrency(risparmioTotale)}
-              <span className="text-xs font-normal text-slate-400 block sm:inline sm:ml-1">/ mese</span>
+              <span className="text-[10px] font-normal text-slate-400 block">/ mese</span>
             </span>
           </div>
 
           {/* Right: Nuova bolletta */}
           <div className="flex flex-col text-right">
-            <span className="text-xs text-sky-300 font-medium uppercase tracking-wider">
+            <span className="text-[10px] text-sky-300 font-bold uppercase tracking-wider">
               Nuova bolletta
             </span>
-            <div className="mt-1">
+            <div className="mt-0.5">
               {isAzzerata ? (
-                <span className="inline-flex items-center gap-1 text-sm sm:text-base font-extrabold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-2 py-0.5 rounded-lg">
-                  0€ (Bolletta Azzerata)
+                <span className="inline-flex items-center text-xs font-extrabold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-1.5 py-0.5 rounded-md">
+                  0€ (Azzerata)
                 </span>
               ) : (
-                <span className="text-xl sm:text-2xl font-black text-white">
+                <span className="text-lg font-black text-white">
                   {formatCurrency(nuovaBolletta)}
-                  <span className="text-xs font-normal text-slate-400 block sm:inline sm:ml-1">/ mese</span>
+                  <span className="text-[10px] font-normal text-slate-400 block">/ mese</span>
                 </span>
               )}
             </div>
@@ -223,9 +203,9 @@ export const Calculator: React.FC = () => {
         </div>
 
         {/* Bottom in small text: Risparmio Annuale */}
-        <div className="pt-3 flex items-center justify-between text-xs text-slate-300">
-          <span className="font-medium text-slate-400">Risparmio annuale:</span>
-          <span className="font-bold text-sky-300 text-sm">
+        <div className="pt-2 flex items-center justify-between text-xs text-slate-300">
+          <span className="font-medium text-slate-400 text-[11px]">Risparmio annuale:</span>
+          <span className="font-bold text-sky-300 text-xs">
             {formatCurrency(risparmioAnnuale)} / anno
           </span>
         </div>
