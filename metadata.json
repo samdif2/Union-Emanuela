@@ -1,0 +1,6 @@
+{
+  "name": "Union Energia - Azzera la tua Bolletta",
+  "description": "App web mobile-first per promuovere Union Energia, calcolare il cashback sulle spese quotidiane e azzerare le bollette.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
